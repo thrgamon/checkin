@@ -88,7 +88,7 @@ cf58fd4 Prevent bug where sand mistaken for jewels
 
 etc.
 
-####Known Issues
+#### Known Issues
 Not very respectful of the This Week/Last Week division so on a monday will list like this. 
 
 Sunday (Yesterday)
