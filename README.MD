@@ -4,19 +4,17 @@ A small command line script to help autogenerate slack checkin messages 'cus you
 
 Will give you three prompts in the command line to fill in yesterday's achievements, todays goals and any current blockers. Returning a blank line will skip to the next section.
 
-OMFG AND THEN IT COPIES IT TO YOUR CLIPBOARD SO YOU CAN JUST PASTE IT IN SLACK.
+By default, it will store your goals in a file in the repo directory so you can use the recap command (see below). It will also, by default, copy your checkin to your clipboard. If you want to override either of these, just update the `run_checkin.rb` file overriding those options.
 
-Pro Tip: I would recommend aliasing it in your (bash||zsh||fish)_profile to make it super easy to check in.
+Pro Tip: I would recommend aliasing it in your bash_profile to make it super easy to check in.
 
 `alias checkin='ruby ~/path/to/file/run_checkin.rb'`
 
 ## Recap
 
-WOAH! Whatup UPDATE FANS?!?
+Woah - recap is basically like time travel, but with 38% fewer paradoxes.
 
-A new improved version of the checkin script features a BRAND NEW CHECKIN ENGINE as well as the ability to RECAP YOUR WEEK
-
-Bind the recap alias and it will return what your goals were for the last week. GNARLY DUDES.
+Bind the recap alias and it will return what your goals were for the last week. GNARLY!
 
 `alias recap='ruby ~/path/to/file/run_recap.rb'`
 
@@ -29,9 +27,9 @@ The goals are stored in a plain .yml in the scripts directory, so you can check 
 
 A NEW UTILITY - many codes. much review.
 
-Git log outouts a log of all your commits for a given directory. However, at an agency, you are often working among several directorys.
+Git log outouts a log of all your commits for a given directory. However, at an agency, you are often working among several projects and therefore several directories.
 
-This takes a root directory and then goes into each sub directory (1 level deep) and calls gitlog if that directory is a git repository.
+This takes a root directory and then goes into each sub directory (1 level deep) and calls `git log` if that directory is a git repository.
 
 It then outputs the result divided by either day or project. I find this useful to remind myself what I have worked on that week.
 
@@ -44,7 +42,7 @@ It takes three command line arguments.
 -p --path | The path of the project parent directory - if left blank will run in current directory.
 ```
 
-Note, It assumes that you keep all your projects in one directory.
+Note, It assumes that you keep all your projects in one directory parent directory, nested one level deep like so.
 
 ```
 projects
