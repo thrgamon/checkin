@@ -16,26 +16,9 @@ class GoalsStore
     @store = YAML::Store.new("#{File.dirname(__FILE__)}/#{goals_file}")
   end
 
-  def today
-    DateTime.now.strftime('%A')
-  end
-
-  def datestamp
-    DateTime.now.strftime(TIMESTAMP_FORMAT)
-  end
-
   def store_goals(goals, day = today)
     store.transaction do
       store["#{day}'s Goals || #{datestamp}"] = goals
-    end
-  end
-
-  def within_7_days(date)
-    date = Date.strptime(date, TIMESTAMP_FORMAT)
-    if date <= Date.today && date > Date.today - 7
-      true
-    else
-      false
     end
   end
 
@@ -54,4 +37,24 @@ class GoalsStore
       puts "\n\n"
     end
   end
+
+  private
+	
+    def today
+      DateTime.now.strftime('%A')
+    end
+
+    def datestamp
+      DateTime.now.strftime(TIMESTAMP_FORMAT)
+    end
+   
+    def within_7_days(date)
+      date = Date.strptime(date, TIMESTAMP_FORMAT)
+      if date <= Date.today && date > Date.today - 7
+	true
+      else
+	false
+      end
+    end
+
 end
