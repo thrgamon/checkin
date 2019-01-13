@@ -1,10 +1,16 @@
-# Slack Checkin Script
+# Checkin Script Central
+
+This repo contains a collection of scripts that can help you checkin, and remind you what you have been up to over the week so you don't look like a doofus at standup.
+
+Fairly rough and ready, so feel free to submit a PR if you find any bugs or want it work a bit differently.
+
+## Checkin Script
 
 A small command line script to help autogenerate slack checkin messages 'cus your lazy like me.
 
 Will give you three prompts in the command line to fill in yesterday's achievements, todays goals and any current blockers. Returning a blank line will skip to the next section.
 
-By default, it will store your goals in a file in the repo directory so you can use the recap command (see below). It will also, by default, copy your checkin to your clipboard. If you want to override either of these, just update the `run_checkin.rb` file overriding those options.
+By default, it will store your goals in a file in the repo directory so you can use the recap command (see below). It will also, by default, copy your checkin to your clipboard. If you want to override either of these, just update the `run_checkin.rb` file overriding those options. Yes it would be easier to use command line flags, but I didn't think of that when I originally wrote it.
 
 Pro Tip: I would recommend aliasing it in your bash_profile to make it super easy to check in.
 
